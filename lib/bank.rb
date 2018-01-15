@@ -34,18 +34,15 @@ def withdrawal
     puts "How much would you like to withdraw?\n(To return to main menu, type M.)"
     input = gets.chomp
     if !input.empty?
-        if input.to_i.integer?
-            input = input.to_i
-            if input <= $balance
-                $balance -= input
-                check_balance
-            elsif input > $balance
-                puts "You cannot withdraw $#{input} as you only have $#{$balance} in your account."
-                withdrawal
-            end
+        if input.to_i <= $balance
+            $balance -= input.to_i
+            check_balance
+        elsif input.to_i > $balance
+            puts "You cannot withdraw $#{input} as you only have $#{$balance} in your account."
+            withdrawal
+        elsif input.downcase == "m"
+            choose_options
         end
-    elsif input.downcase == "m"
-        choose_options
     else
         puts "Please enter a valid amount."
         withdrawal
@@ -53,27 +50,24 @@ def withdrawal
 end
 
 def choose_options
-    puts "What would you like to do? \n\tFor deposit, type 1.\n\tFor withdrawal, type 2.\n\tTo check your balance, type 3.\n\tTo cancel, type 4."
+    puts "What would you like to do? \n\tFor deposit, type 1.\n\tFor withdrawal, type 2.\n\tTo check your balance, type 3.\n\tTo exit, type 4."
 
     choice = gets.chomp.to_i
 
     if choice == 0
         puts "Please enter a valid option."
         choose_options
+    elsif choice == 4
+        puts "Thank you for banking with us. See you again!"
     else
         if choice == 1
             deposit
-            done
         elsif choice == 2
             withdrawal
-            done
         elsif choice == 3
             check_balance
-            done
-        elsif choice == 4
-            puts "Please enter a valid option."
-            choose_options
         end
+        done
     end
 end
 
