@@ -1,21 +1,47 @@
 # Challenge 3 - Bank Transactions
 
-operation = gets.chomp
+bankBal = 4000
 
-puts = "Your current balance is $4000"
+def deposit(amt)
+  bankBal += amt
+  return bankBal
+end
 
-puts = "What would you like to do? (deposit, withdraw, check_balance)"
+def withdraw(amt)
+  bankBal -= amt
+  return bankBal
+end
 
-puts = "How much would you like to deposit?"
-  num1 = gets.to_i
+# to clarify
+puts "Your current balance is #{bankBal}"     
 
-if operation == "deposit"
-  puts "Your current balance is #{4000 + num1}"
+def transaction
+  puts "What would you like to do? (deposit, withdraw, check_balance)"
+    operation = gets.chomp
 
-elsif
+if operation === 'deposit'
+  puts "How much would you like to deposit?"
+  num = gets.chomp.to_i
+    puts "Your current balance is #{deposit(num)}"
+
+elsif operation = 'withdraw'
+  puts "How much would you like to withdraw?"
+  num = gets.chomp.to_i
+    puts "Your current balance is #{withdraw(num)}"
+
+elsif operation = 'check_balance'
+  puts "Your current balance is #{bankBal)}"
+
+else
   puts "Are you done?"
+  done = gets.chomp
+  
+# to clarify
 
-if operation == "yes"
+if done == "yes"
   puts "Thank you!"
 
+elsif done === "no"
+      transaction
+  end
 end

@@ -1,8 +1,14 @@
 # Challenge 4 - Guessing Game
 
-operation = gets.chomp
+number = 19
 
-puts = "Guess a number between 1 and 100."
+puts "Guess a number between 1 and 100."
+
+def eval(num)
+  guess = gets.chomp.to_i
+
+
+
 
 
 if operation < 50
@@ -22,6 +28,6 @@ elsif operation > 18
   puts = "The number is higher than 18.  Guess again"
 
 else
-  puts = "You got it in 7 triesn"
+  puts = "You got it in 7 tries"
 
 end
