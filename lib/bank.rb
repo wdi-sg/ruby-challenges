@@ -12,7 +12,7 @@ transac = gets.chomp
 if ['deposit', 'withdraw', 'check_balance'].include? transac
 
 
-    #if user wants to deposit OR withdraw - then we need to ask how much they would like?
+    #if user wants to deposit
 
     if transac == 'deposit'
     puts 'How much would you like to deposit?'
@@ -22,7 +22,7 @@ if ['deposit', 'withdraw', 'check_balance'].include? transac
     puts "Your current balance is #{balance.to_f + deposit.to_f} "
 
 
-     #if user wants to deposit OR withdraw - then we need to ask how much they would like?
+     #if user wants to withdraw
      elsif transac == 'withdraw'
     puts 'How much would you like to withdraw?'
 
@@ -31,7 +31,7 @@ if ['deposit', 'withdraw', 'check_balance'].include? transac
     puts "Your current balance is #{balance.to_f - withdraw.to_f} "
 
 
-    #if user wants to deposit OR withdraw - then we need to ask how much they would like?
+    #if user wants to check balance
 
      elsif transac == 'check_balance'
     puts "Your current balance is #{balance.to_f}"
