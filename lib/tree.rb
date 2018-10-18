@@ -1,6 +1,3 @@
-# Question: Think of all the structures you've encountered in this course. Where might you find a tree?
-# Answer: DOM
-
 class Node
   attr_accessor :data
   attr_accessor :left_child
@@ -22,7 +19,7 @@ class Node
 end
 
 def traverse_in_order(node)
-  if (node != nil)
+  unless node.nil?
     traverse_in_order(node.left_child)
     puts node.data
     traverse_in_order(node.right_child)
