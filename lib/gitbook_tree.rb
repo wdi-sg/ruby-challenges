@@ -90,7 +90,22 @@ node312.right = node4322
 
 node322.left = node4331
 
+puts tree.to_s
+
 puts tree
+
+def depth_first_search(node)
+  if node.left != nil
+    depth_first_search(node.left)
+  elsif node.right != nil
+    depth_first_search(node.right)
+  elsif node.right == nil && node.left == nil
+    puts node.data
+  end
+end
+
+depth_first_search(tree.root)
+
 
 
 
