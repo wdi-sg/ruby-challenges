@@ -1,4 +1,4 @@
-puts "Enter a string"
+puts 'Enter a string'
 user_input = gets.chomp.split('')
 
 $reverse = []
@@ -9,5 +9,4 @@ while i >= 0 do
   i -= 1
 end
 
-puts "#{$reverse.join}"
-
+puts $reverse.join.to_s
