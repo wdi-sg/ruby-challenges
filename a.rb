@@ -52,7 +52,10 @@ class Tree
       else
       node = child end
     end
-    p "Found #{word}"
+      if node.end == true then return p "Found #{word}"
+      else
+      return p "#{word} not found"
+    end
   end
 end
 
@@ -68,3 +71,4 @@ tree.add(str3)
 
 tree.find("apple")
 tree.find(str4)
+tree.find("app")
