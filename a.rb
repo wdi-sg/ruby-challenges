@@ -27,7 +27,7 @@ class Node
     return nil
   end
  end
-########################## need to add retreive() and check() methods ###################
+
 
 class Tree
   attr_accessor :root
